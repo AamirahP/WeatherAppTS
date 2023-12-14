@@ -8,48 +8,42 @@ import { useState } from "react";
 import "./App.css";
 import axios from "axios";
 
-interface Props {
+/* interface Props {
   search: () => void;
-}
+} */
 
 function App() {
   const [Wicon, setWicon] = useState(<WiDaySunny />);
   const [weatherData, setWeatherData] = useState({});
 
+  const api_key = "5e0d79d511e1ab5f09cd6435c9e76dcb";
   const search = () => {
-    axios
-      .get("/api/weather", {
-        params: {
-          city: "London",
-        },
+    App.get('/api/weather', async (req: { query: { city: any; }; }, res: any) => {
+      const { city } = req.query;
+      try {
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather`, {
+          params: {
+            q: city,
+            units: 'metric',
+            appid: api_key,
+          },
+        });
       })
-      .then((response) => {
-        setWeatherData(response.data);
-      });
-  }
+      .then((res) => console.log(res));
+  };
 
   return (
     <div className="Container">
       <SearchBar search={search} />
-      <WeatherImage setWicon={setWicon} weatherData={weatherData} />
+      <div className="weather-image">
+        <WeatherImage setWicon={setWicon} weatherData={weatherData} />
+      </div>
       <WeatherData />
-      <Wind />
-      <Humidity />
-    </div>
-  );
-}
-
-    return (
-      <div className="Container">
-        <SearchBar search={search} />
-        <WeatherImage setWicon={WeatherImage} weatherData={weatherData} search={search}/>
-        <WeatherData />
+      <div className="elements">
         <Wind />
         <Humidity />
       </div>
-    );
-      <><WeatherImage setWicon={WeatherImage} weatherData={WeatherData} search={search} /><WeatherData /><Wind /><Humidity /></>
-    
+    </div>
   );
 }
 

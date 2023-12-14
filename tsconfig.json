@@ -18,7 +18,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+  
+    "types": ["babel__generator"],
+    "typeRoots": ["node_modules/@types", "your_custom_types_folder"]
+    
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

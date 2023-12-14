@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect } from "react";
 import {
   WiCloudy,
@@ -49,24 +48,16 @@ const WeatherImage = ({ setWicon, weatherData }: Props) => {
         break;
     }
   }
-  return null;
+  return <WiCloudy size={250} />;
 };
 
-useEffect(() => {
-  updateWIcon();
-}, [setWeatherData]);
+// useEffect(() => {
+//   updateWIcon();
+// }, [setWeatherData]);
 
-useEffect(() => {
-  // Fetch data for the default city when the component mounts
-  search();
-}, []);
+// useEffect(() => {
+//   // Fetch data for the default city when the component mounts
+//   search();
+// }, []);
 
 export default WeatherImage;
-
-function setWeatherData(data: any) {
-  throw new Error("Function not implemented.");
-}
-
-function updateWIcon() {
-  throw new Error("Function not implemented.");
-}

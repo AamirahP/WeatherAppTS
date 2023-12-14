@@ -1,11 +1,13 @@
-import {WiHumidity} from 'react-icons/wi'
+import { WiHumidity } from "react-icons/wi";
 
 const Humidity = () => {
   return (
-    <div className='humidity'>
-        <WiHumidity size="50"/> 
-        Humidity %</div>
-  )
-}
+    <div className="element">
+      <div className="humidity-percent">%</div>
+      <div className="text">Humidity</div>
+      <WiHumidity size="50" />
+    </div>
+  );
+};
 
-export default Humidity
+export default Humidity;

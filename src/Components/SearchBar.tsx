@@ -1,15 +1,15 @@
 import { AiOutlineSearch } from "react-icons/ai";
 
-const SearchBar = () => {
-  function search() {
-    throw new Error("Function not implemented.");
-  }
+interface Props {
+  search: () => void;
+}
 
+const SearchBar = ({ search }: Props) => {
   return (
     <div className="topBar">
       <input type="text" className="cityInput" placeholder="Search" />
 
-      <AiOutlineSearch size="20" onClick={search()} />
+      <AiOutlineSearch className="searchIcon" size="20" onClick={search} />
     </div>
   );
 };
