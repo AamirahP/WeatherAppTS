@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   WiCloudy,
   WiDaySprinkle,
@@ -50,14 +49,5 @@ const WeatherImage = ({ setWicon, weatherData }: Props) => {
   }
   return <WiCloudy size={250} />;
 };
-
-// useEffect(() => {
-//   updateWIcon();
-// }, [setWeatherData]);
-
-// useEffect(() => {
-//   // Fetch data for the default city when the component mounts
-//   search();
-// }, []);
 
 export default WeatherImage;
