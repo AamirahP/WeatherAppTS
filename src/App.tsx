@@ -10,21 +10,20 @@ import apiClient from "./index.ts";
 
 function App() {
   // const [Wicon, setWicon] = useState(<WiDaySunny />);
-  const [weatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({});
+  const [city, setCity] = useState("London");
 
   const search = () => {
     const api_key = "5e0d79d511e1ab5f09cd6435c9e76dcb";
     apiClient
-      .get(`/data/2.5/weather?q=london&appid=${api_key}`)
-      .then((res) => console.log(res));
+      .get(`/data/2.5/weather?q=${city}&appid=${api_key}`)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.error("Error fetching data: ", err));
   };
-  useEffect(() => {
-    search(), [];
-  });
 
   return (
     <div className="Container">
-      <SearchBar search={search} />
+      <SearchBar search={search} city={city} setCity={setCity} />
       <div className="weather-image">
         <WeatherImage setWicon={WiDaySunny} weatherData={weatherData} />
       </div>
