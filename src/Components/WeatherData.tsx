@@ -1,8 +1,13 @@
-const WeatherData = () => {
+interface Props {
+  temperature: number;
+  location: string;
+}
+
+const WeatherData = ({ temperature, location }: Props) => {
   return (
     <>
-      <div className="weatherTemp">7 °C</div>
-      <div className="weatherLocation"> London </div>{" "}
+      <div className="weatherTemp">{temperature} °C</div>
+      <div className="weatherLocation"> {location} </div>{" "}
     </>
   );
 };
