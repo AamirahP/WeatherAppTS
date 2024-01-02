@@ -6,7 +6,7 @@ interface Props {
 
 const Humidity = ({ humidity }: Props) => {
   return (
-    <div className="element">
+    <div className="humidity">
       <div className="humidity-percent">{humidity}%</div>
       <div className="text">Humidity</div>
       <WiHumidity size="50" />

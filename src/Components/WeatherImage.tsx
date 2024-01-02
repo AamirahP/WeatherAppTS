@@ -1,54 +1,40 @@
-// import {
-//   WiCloudy,
-//   WiDaySprinkle,
-//   WiDayRain,
-//   WiSnow,
-//   WiDaySunny,
-// } from "react-icons/wi";
+import {
+  WiDaySunny,
+  WiCloud,
+  WiRain,
+  WiSnow,
+  WiThunderstorm,
+  WiFog,
+  WiNightClear,
+  WiNightCloudy,
+} from "react-icons/wi";
 
-// interface Props {
-//   setWicon: any;
-//   weatherData: {
-//     main?: {
-//       temp?: number;
-//     };
-//     weather?: {
-//       icon: string;
-//     }[];
-//   };
-// }
+interface Props {
+  iconCode?: string;
+}
 
-// const WeatherImage = () => {
+const weatherIcons: { [key: string]: JSX.Element } = {
+  "01d": <WiDaySunny size={300} />,
+  "02d": <WiCloud size={300} />,
+  "03d": <WiCloud size={300} />, // For cloudy conditions
+  "04d": <WiCloud size={300} />, // For broken clouds
+  "09d": <WiRain size={300} />,
+  "10d": <WiRain size={300} />, // For rain
+  "11d": <WiThunderstorm size={300} />,
+  "13d": <WiSnow size={300} />,
+  "50d": <WiFog size={300} />, // For foggy conditions
+  "01n": <WiNightClear size={300} />, // For clear night
+  "02n": <WiNightCloudy size={300} />, // For cloudy night
+};
 
-//   if (weatherData && weatherData.main && weatherData.main.temp !== undefined) {
-//     switch (weatherData?.weather && weatherData.weather[0].icon) {
-//       case "01":
-//       case "01n":
-//         break;
-//       case "02d":
-//       case "012n":
-//         setWicon(<WiCloudy />);
-//         break;
-//       case "03d":
-//       case "03n":
-//       case "04d":
-//       case "04n":
-//         setWicon(<WiDaySprinkle />);
-//         break;
-//       case "09d":
-//       case "09n":
-//         setWicon(<WiDayRain />);
-//         break;
-//       case "13d":
-//       case "13n":
-//         setWicon(<WiSnow />);
-//         break;
-//       default:
-//         setWicon(<WiDaySunny />);
-//         break;
-//     }
-//   }
-//   return <WiCloudy size={250} />;
-// };
+const WeatherImage: React.FC<Props> = ({ iconCode }) => {
+  const defaultIcon = <WiDaySunny size={300} />;
 
-// export default WeatherImage;
+  const selectedIcon = iconCode
+    ? weatherIcons[iconCode] || defaultIcon
+    : defaultIcon;
+
+  return <div className="weather-icon">{selectedIcon}</div>;
+};
+
+export default WeatherImage;

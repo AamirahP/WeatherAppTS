@@ -6,7 +6,7 @@ interface Props {
 
 const Wind = ({ windSpeed }: Props) => {
   return (
-    <div className="element">
+    <div className="wind">
       <div className="wind-rate"> {windSpeed} km/h</div>
       <div className="text">Wind Speed</div>
       <TiWeatherWindy size="50" />
