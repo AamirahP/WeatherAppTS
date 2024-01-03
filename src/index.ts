@@ -1,12 +1,12 @@
-import axios from "axios";
+import axios from 'axios';
 
-export default axios.create ({
-    baseURL: `https://api.openweathermap.org`,
-    params: {
-        key: '5e0d79d511e1ab5f09cd6435c9e76dcb',
-        units: 'metric'
-    }
+const apiClient = axios.create({
+  baseURL: 'http://localhost:3001', 
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
+export default apiClient;
 
-})
 

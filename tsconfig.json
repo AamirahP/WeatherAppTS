@@ -3,11 +3,14 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "module": "commonjs",
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -20,10 +23,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
   
-    "types": ["babel__generator"],
+    "types": ["node"],
     "typeRoots": ["node_modules/@types", "your_custom_types_folder"]
     
   },
-  "include": ["src"],
+  "include": ["src", "backend"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

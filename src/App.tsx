@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import apiClient from "./index.ts";
 import SearchBar from "./Components/SearchBar";
-// import WeatherImage from "./Components/WeatherImage";
 import WeatherData from "./Components/WeatherData";
 import Wind from "./Components/Wind";
 import Humidity from "./Components/Humidity";
 import WeatherImage from "./Components/WeatherImage.tsx";
-// import { WiDaySunny } from "react-icons/wi";
 
 interface WeatherData {
   main: {
@@ -28,18 +25,18 @@ function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [city, setCity] = useState("London");
 
-  const search = (searchCity?: string) => {
-    const api_key = "5e0d79d511e1ab5f09cd6435c9e76dcb";
-    const queryCity = searchCity || city;
+  const search = async (searchCity?: string) => {
+    try {
+      const response = await fetch(
+        `http://localhost:5173/weather?city=${searchCity || city}`
+      );
 
-    apiClient
-      .get(`/data/2.5/weather?q=${queryCity}&appid=${api_key}`)
-      .then((res) => {
-        console.log("API Response:", res.data);
-        setWeatherData(res.data);
-        console.log("Weather Data State:", weatherData);
-      })
-      .catch((err) => console.error("Error fetching data: ", err));
+      const data = await response.json();
+      console.log("Response from backend:", data);
+      setWeatherData(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   useEffect(() => {
@@ -74,4 +71,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
