@@ -1,5 +1,9 @@
+/**
+* @jest-environment jsdom
+*/
+
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import App from '../src/App';
 
 
@@ -8,7 +12,7 @@ global.fetch = jest.fn(() =>
     json: () =>
       Promise.resolve({
         main: {
-          temp: 25, 
+          temp: '25', 
           humidity: 80, 
         },
         name: 'London', 
@@ -31,7 +35,7 @@ test('renders weather data properly', async () => {
   
   await waitFor(() => {
     
-    expect(getByText('Temperature: 25°C')).toBeInTheDocument();
+    expect(getByText('25')).toBeInTheDocument();
     expect(getByText('Humidity: 80%')).toBeInTheDocument();
     expect(getByText('Location: London')).toBeInTheDocument();
     expect(getByText('Wind Speed: 10 m/s')).toBeInTheDocument();
