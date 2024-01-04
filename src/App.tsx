@@ -29,7 +29,7 @@ function App() {
   const search = async (searchCity?: string) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/weather?city=${searchCity || city}`
+        `http://localhost:3001/weather?city=${searchCity ?? city}`
       );
 
       const data = await response.json();
