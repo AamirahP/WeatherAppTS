@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\sum.test.js">
-    <testCase name="adds 1 + 2 to equal 3" duration="25"/>
+    <testCase name="adds 1 + 2 to equal 3" duration="15"/>
   </file>
   <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\mockAPI.test.js">
-    <testCase name="renders weather data properly" duration="123"/>
+    <testCase name="renders weather data properly" duration="100"/>
+  </file>
+  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\WeatherappRender.test.js">
+    <testCase name="WeatherApp component rendering renders WeatherApp components with data" duration="70"/>
   </file>
 </testExecutions>
