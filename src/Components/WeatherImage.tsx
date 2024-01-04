@@ -14,7 +14,7 @@ interface Props {
 }
 
 const weatherIcons: { [key: string]: JSX.Element } = {
-  "01d": <WiDaySunny size={300} />,
+  "01d": <WiDaySunny size={300} color="orange" />,
   "02d": <WiCloud size={300} />,
   "03d": <WiCloud size={300} />, // For cloudy conditions
   "04d": <WiCloud size={300} />, // For broken clouds

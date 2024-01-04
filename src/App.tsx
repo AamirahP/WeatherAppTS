@@ -5,6 +5,7 @@ import WeatherData from "./Components/WeatherData";
 import Wind from "./Components/Wind";
 import Humidity from "./Components/Humidity";
 import WeatherImage from "./Components/WeatherImage.tsx";
+import WeatherDescription from "./Components/WeatherDescription.tsx";
 
 interface WeatherData {
   main: {
@@ -28,7 +29,7 @@ function App() {
   const search = async (searchCity?: string) => {
     try {
       const response = await fetch(
-        `http://localhost:5173/weather?city=${searchCity || city}`
+        `http://localhost:3001/weather?city=${searchCity || city}`
       );
 
       const data = await response.json();
@@ -61,6 +62,10 @@ function App() {
           <div className="weather-image">
             <WeatherImage iconCode={weatherData?.weather[0].icon} />
           </div>
+
+          <WeatherDescription
+            description={weatherData.weather[0].description}
+          />
 
           <div className="elements">
             <Wind windSpeed={weatherData.wind.speed} />
