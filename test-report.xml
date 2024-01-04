@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\sum.test.js">
+    <testCase name="adds 1 + 2 to equal 3" duration="12"/>
+  </file>
+  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\WeatherappRender.test.js">
+  </file>
+</testExecutions>

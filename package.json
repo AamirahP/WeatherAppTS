@@ -26,7 +26,10 @@
 
     "collectCoverage": true,
 
-    "testResultsProcessor": "jest-sonar-reporter"
+    "testResultsProcessor": "jest-sonar-reporter",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "\\.css$" ]
 
   },
 
@@ -57,6 +60,8 @@
     "@babel/preset-react": "^7.23.3",
 
     "@babel/preset-typescript": "^7.23.3",
+
+    "@testing-library/react": "^14.1.2",
 
     "@types/babel__generator": "^7.6.7",
 
