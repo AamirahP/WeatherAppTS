@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\sum.test.js">
-    <testCase name="adds 1 + 2 to equal 3" duration="15"/>
-  </file>
-  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\mockAPI.test.js">
-    <testCase name="renders weather data properly" duration="100"/>
-  </file>
-  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\WeatherappRender.test.js">
-    <testCase name="WeatherApp component rendering renders WeatherApp components with data" duration="70"/>
+  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\JSONformat.test.js">
+    <testCase name="Backend API Test should return weather data in JSON format" duration="3">
+      <failure message="TypeError: app.address is not a function"><![CDATA[TypeError: app.address is not a function
+    at Test.serverAddress (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\supertest\lib\test.js:46:22)
+    at new Test (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\supertest\lib\test.js:34:14)
+    at Object.obj.<computed> [as get] (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\supertest\index.js:43:18)
+    at Object.get (C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\JSONformat.test.js:32:41)
+    at Promise.then.completed (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\aamir\Documents\TSI\react\Weatherapp3\node_modules\jest-runner\build\runTest.js:444:34)]]></failure>
+    </testCase>
   </file>
 </testExecutions>
