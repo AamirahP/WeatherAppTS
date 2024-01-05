@@ -3,7 +3,7 @@ import cors from 'cors';
 import axios from 'axios';
 import path from 'path';
 
-const app = express();
+const app= express();
 const api_key = '5e0d79d511e1ab5f09cd6435c9e76dcb';
 
 app.use(cors());
@@ -40,9 +40,12 @@ app.use(express.static(frontendPath));
 // Handle the root URL
 app.get('/', (_req: Request, res: Response) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
-});
+})
 
 const port = process.env.PORT ?? 3001;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
+export default app;
