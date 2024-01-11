@@ -63,9 +63,11 @@ function App() {
             <WeatherImage iconCode={weatherData?.weather[0].icon} />
           </div>
 
-          <WeatherDescription
-            description={weatherData.weather[0].description}
-          />
+          <div className="description">
+            <WeatherDescription
+              description={weatherData.weather[0].description}
+            />
+          </div>
 
           <div className="elements">
             <Wind windSpeed={weatherData.wind.speed} />

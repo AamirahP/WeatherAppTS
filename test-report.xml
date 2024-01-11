@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\WeatherappRender.test.js">
-    <testCase name="WeatherApp component rendering renders WeatherApp components with data" duration="118"/>
-  </file>
-  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\mockAPI.test.test.js">
-    <testCase name="renders weather data properly" duration="119"/>
+  <file path="C:\Users\aamir\Documents\TSI\react\Weatherapp3\test\API.test.js">
   </file>
 </testExecutions>
